@@ -1,11 +1,13 @@
 package domain
 
-import io.realm.kotlin.types.RealmObject
-import io.realm.kotlin.types.annotations.PrimaryKey
-import org.mongodb.kbson.ObjectId
+class CounterClass(
+    var count: Int = 0,
+)
 
-class Counter : RealmObject {
-    @PrimaryKey
-    var _id: ObjectId = ObjectId()
-    var count: Int = 0
-}
+data class CounterData(
+    val count: Int = 0,
+)
+
+data class CounterDataVar(
+    var count: Int = 0,
+)
