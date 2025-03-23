@@ -4,7 +4,9 @@ import androidx.compose.runtime.mutableStateOf
 import domain.CounterClass
 import domain.CounterData
 import domain.CounterDataVar
-import org.koin.core.component.KoinComponent
+import domain.pattern3.TextData1
+import domain.pattern3.TextData2
+import domain.pattern3.UIState
 
 class KmpViewModel {
 
@@ -42,6 +44,23 @@ class KmpViewModel {
         mCounterDataVar2.value = mCounterDataVar2.value.run {
             copy(
                 count = count + 1
+            )
+        }
+    }
+
+    val uiState = mutableStateOf(
+        UIState(
+            TextData1(""),
+            TextData2(""),
+        )
+    )
+
+    fun updateUIState() {
+        uiState.value = uiState.value.let {
+            it.copy(
+                textData2 = it.textData2.run {
+                    copy(text = text + "a")
+                }
             )
         }
     }
