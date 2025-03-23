@@ -57,6 +57,11 @@ fun App(
             ) {
                 Text("+")
             }
+
+            Pattern3(
+                modifier = modifier,
+                viewModel = viewModel,
+            )
         }
     }
 }
